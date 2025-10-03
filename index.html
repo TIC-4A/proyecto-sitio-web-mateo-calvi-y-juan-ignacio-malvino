@@ -1,14 +1,97 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>App de Handball</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <main class="app-container">
+
+        <section id="screen-branch" class="screen active">
+            <div class="selection-container">
+                <h2>HANDBALL</h2>
+                <h3>Selecciona la Rama</h3>
+                <ul class="selection-list">
+                    <li class="nav-button" data-value="Masculino" data-target="screen-category">Masculino</li>
+                    <li class="nav-button" data-value="Femenino" data-target="screen-category">Femenino</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="screen-category" class="screen">
+            <div class="selection-container">
+                <h2 id="category-title"></h2>
+                <h3>Selecciona la Categoría</h3>
+                <ul class="selection-list">
+                    <li class="nav-button" data-value="Minis" data-target="screen-division">Minis</li>
+                    <li class="nav-button" data-value="Menores" data-target="screen-division">Menores</li>
+                    <li class="nav-button" data-value="Cadetes" data-target="screen-division">Cadetes</li>
+                    <li class="nav-button" data-value="Juveniles" data-target="screen-division">Juveniles</li>
+                    <li class="nav-button" data-value="Juniors" data-target="screen-division">Juniors</li>
+                    <li class="nav-button" data-value="Mayores" data-target="screen-division">Mayores</li>
+                </ul>
+                <button class="back-button" data-target="screen-branch">← Volver a Rama</button>
+            </div>
+        </section>
+
+        <section id="screen-division" class="screen">
+            <div class="selection-container">
+                <h2 id="division-title"></h2>
+                <h3>Selecciona la División</h3>
+                <ul class="selection-list">
+                    <li class="nav-button" data-value="A" data-target="screen-tables">A</li>
+                    <li class="nav-button" data-value="B" data-target="screen-tables">B</li>
+                    <li class="nav-button" data-value="C" data-target="screen-tables">C</li>
+                    <li class="nav-button" data-value="D" data-target="screen-tables">D</li>
+                    <li class="nav-button" data-value="E1" data-target="screen-tables">E1</li>
+                    <li class="nav-button" data-value="E2" data-target="screen-tables">E2</li>
+                </ul>
+                <button class="back-button" data-target="screen-category">← Volver a Categoría</button>
+            </div>
+        </section>
+        
+        <section id="screen-tables" class="screen">
+            <header class="tables-header">
+                <h3 id="tables-breadcrumb"></h3>
+                <button class="nav-button" data-target="screen-branch" id="reset-selection">Cambiar Selección</button>
+            </header>
+            <div class="tables-container">
+                <div class="table-wrapper">
+                    <h4>Tabla de Equipos</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Equipo</th>
+                                <th>Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="teams-table-body">
+                            </tbody>
+                    </table>
+                </div>
+                <div class="table-wrapper">
+                    <h4>Tabla de Goleadores</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Jugador/a</th>
+                                <th>Goles</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scorers-table-body">
+                             </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
