@@ -1,0 +1,164 @@
+/* --- Reseteo Básico y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #009dff;
+    color: #000000;
+
+    /* --- BACKGROUND IMAGES ADDED HERE --- */
+    background-image: url(https://www.google.com/imgres?q=mujer%20handball&imgurl=http%3A%2F%2Fhandballargentina.org%2Fcah%2Fwp-content%2Fuploads%2F2021%2F03%2FJLR_9053.jpg&imgrefurl=http%3A%2F%2Fhandballargentina.org%2Fcah%2F2021%2F03%2Fla-seleccion-femenina-cayo-con-espana-en-el-cierre-del-preolimpico-y-no-estara-en-tokio-2020%2F&docid=XijX89wDGNtMAM&tbnid=GNN33R4xbgceOM&vet=12ahUKEwiQgKi4kdOPAxXQrJUCHW7IFxIQM3oECBkQAA..i&w=1575&h=1181&hcb=2&ved=2ahUKEwiQgKi4kdOPAxXQrJUCHW7IFxIQM3oECBkQAA), url(https://www.google.com/imgres?q=hombre%20handball&imgurl=https%3A%2F%2Fwww.lanacion.com.ar%2Fresizer%2Fv2%2Ffederico-pizarro-es-uno-de-los-gladiadores-con-J6MUW6MIDFHUXPNR2CDT4TM63A.JPG%3Fauth%3Ddad7b77ce96432a9a1c4900563822759e9d7bda94d292fb3a795d97d3fd2e801%26width%3D420%26height%3D280%26quality%3D70%26smart%3Dtrue&imgrefurl=https%3A%2F%2Fwww.lanacion.com.ar%2Fdeportes%2Fcanchallena%2Flas-apuestas-del-mundial-de-handball-masculino-los-favoritos-y-cuanto-paga-la-argentina-segun-los-nid07012023%2F&docid=ZOLD_Rzb9e9PKM&tbnid=0C6w25P0Weqr6M&vet=12ahUKEwjf0cHAkdOPAxV7qpUCHX1fIjoQM3oECBcQAA..i&w=420&h=280&hcb=2&ved=2ahUKEwjf0cHAkdOPAxV7qpUCHX1fIjoQM3oECBcQAA); /* Replace with your image paths */
+    background-position: left center, right center; /* Position the images */
+    background-size: auto 80%, auto 80%; /* Adjust size as needed, 80% of body height */
+    background-repeat: no-repeat; /* Prevent images from repeating */
+    /* --- END BACKGROUND IMAGES --- */
+}
+
+.app-container {
+    width: 400px;
+    height: 750px;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Control de Pantallas --- */
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+   
+
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* --- Estilos para las pantallas de selección --- */
+.selection-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.selection-container h2 {
+    font-size: 1.8em;
+    color: #009dff;
+}
+
+.selection-container h3 {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.selection-list {
+    list-style-type: none;
+}
+
+.selection-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px auto;
+    width: 80%;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.selection-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    background-color: #f0f4ff;
+}
+
+.back-button {
+    margin-top: 40px;
+    background: none;
+    border: none;
+    color: #009dff;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* --- Pantalla 4: Tablas --- */
+#screen-tables {
+    padding: 0;
+}
+
+.tables-header {
+    padding: 15px;
+    background-color: #00d9ff;
+    color: white;
+    text-align: center;
+}
+#tables-breadcrumb {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-weight: 300;
+}
+.tables-header button {
+    background-color: #00d9ff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tables-container {
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para mejor visualización en móvil */
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.table-wrapper {
+    width: 100%;
+    margin-bottom: 20px; /* Espacio entre tablas */
+}
+
+.table-wrapper h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #00d9ff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #525353;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
